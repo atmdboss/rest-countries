@@ -1,0 +1,24 @@
+{
+	"name": "rest-countries",
+	"version": "1.0.0",
+	"description": "![Design preview for the REST Countries API with color theme switcher coding challenge](./design/desktop-preview.jpg)",
+	"main": "index.js",
+	"scripts": {
+		"dev": "next",
+		"build": "next build",
+		"start": "next start"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@zeit/next-css": "^1.0.1",
+		"axios": "^0.19.2",
+		"next": "^9.3.3",
+		"next-redux-wrapper": "^5.0.0",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1",
+		"react-redux": "^7.2.0",
+		"redux": "^4.0.5",
+		"redux-thunk": "^2.3.0"
+	}
+}

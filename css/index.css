@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap");
+:root {
+	--font-color-dark: hsl(0, 0%, 100%);
+	--font-color-light: hsl(200, 15%, 8%);
+	--bg-color-dark: hsl(207, 26%, 17%);
+	--bg-color-light: hsl(0, 0%, 98%);
+	--dark-mode-elements: hsl(209, 23%, 22%);
+	--light-mode-input: hsl(0, 0%, 52%);
+	--deatil: 16px;
+	--homepage: 14px;
+}
+* {
+	padding: 0;
+	margin: 0;
+}
+body {
+	font-family: "Nunito Sans", sans-serif;
+	background-color: var(--bg-color-dark);
+	color: var(--font-color-dark);
+	min-height: 100vh;
+}
+.container {
+	padding: 1em;
+}
+.text-bold {
+	font-weight: bolder;
+}
+.flex {
+	display: flex;
+}
+.flex.justify-between {
+	justify-content: space-between;
+}
+.flex.align-center {
+	align-items: center;
+}
+.welcome {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Pagination --start */
+.pagination-container {
+	margin: 0 auto;
+}
+.pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	list-style-type: none;
+}
+.pagination .page-item {
+	padding: 1em;
+	margin: 1em;
+}
+.pagination .page-link {
+	text-decoration: none;
+}
+/* Pagination --end */
+
+/* Card styles --start*/
+.card {
+	height: 400px;
+	width: 300px;
+	border-radius: 10px;
+}
+.card-image {
+	height: 40%;
+}
+.card-image img {
+	width: 100%;
+}
+/* .card-content {} */
+/* Card styles --end*/
+
+/* STYLES FOR DARK MODE TOGGLE SWITCH --START */
+.theme-switch-wrapper {
+	display: flex;
+	align-items: center;
+}
+.theme-switch-wrapper em {
+	margin-left: 10px;
+	font-size: 1rem;
+}
+.theme-switch {
+	display: inline-block;
+	height: 34px;
+	position: relative;
+	width: 60px;
+}
+
+.theme-switch input {
+	display: none;
+}
+
+.slider {
+	background-color: #ccc;
+	bottom: 0;
+	cursor: pointer;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	transition: 0.4s;
+}
+
+.slider:before {
+	background-color: #fff;
+	bottom: 4px;
+	content: "";
+	height: 26px;
+	left: 4px;
+	position: absolute;
+	transition: 0.4s;
+	width: 26px;
+}
+
+input:checked + .slider {
+	background-color: #66bb6a;
+}
+
+input:checked + .slider:before {
+	transform: translateX(26px);
+}
+
+.slider.round {
+	border-radius: 34px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
+}
+/* STYLES FOR DARK MODE TOGGLE SWITCH --End */
