@@ -1,15 +1,16 @@
 import { useState } from "react";
-import { useRouter } from "next/router";
+import Router from "next/router";
 
 export default () => {
 	const [value, setValue] = useState("");
-	const router = useRouter();
+	// const router = useRouter();
 	const handleChange = ({ target }) => {
 		setValue(target.value);
 	};
 	const handleSubmit = evt => {
 		evt.preventDefault();
-		router.push("/search/[search]", `/search/${value}`);
+		console.log("in submit");
+		Router.push("/search/[search]", `/search/${value}`);
 	};
 	return (
 		<form onSubmit={handleSubmit}>

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const CountryGrid = props => {
 	return (
-		<div>
+		<div className='grid container'>
 			{props.countries &&
 				props.countries.map(country => {
 					return (

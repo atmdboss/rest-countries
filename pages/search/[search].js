@@ -16,7 +16,9 @@ SearchPage.getInitialProps = async context => {
 	const response = await axios.get(
 		`https://restcountries.eu/rest/v2/name/${search}`
 	);
-	if (response.status === 404) return { message: "Sorry...nothing was found" };
+	if (response.status === 404) {
+		return { message: "Sorry...nothing was found" };
+	}
 	return { countries: response.data };
 };
 

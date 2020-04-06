@@ -6,7 +6,7 @@ export default props => {
 		region: { region },
 		capital
 	} = props;
-	// console.log(region);
+
 	return (
 		<div className='card'>
 			<div className='card-image'>
