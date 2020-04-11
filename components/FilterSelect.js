@@ -1,13 +1,9 @@
-import { useState, useEffect } from "react";
-// import { getCountries } from "../redux/countriesReducer";
-// import { connect } from "react-redux";
+import { useState } from "react";
 import { useRouter } from "next/router";
 
 const FilterSelect = () => {
 	const [value, setValue] = useState("");
-	// useEffect(() => {
-	// 	// router.push(`/regions/${value}`);
-	// }, [value]);
+
 	const router = useRouter();
 	const handleChange = ({ target }) => {
 		router.push("/regions/[region]", `/regions/${target.value}`);

@@ -1,10 +1,12 @@
 import FilterSelect from "./FilterSelect";
 import Searchbar from "./Searchbar";
-const Homepage = props => {
+const Homepage = (props) => {
 	return (
 		<>
-			<Searchbar />
-			<FilterSelect />
+			<div className='container search'>
+				<Searchbar />
+				<FilterSelect />
+			</div>
 			{props.children}
 		</>
 	);

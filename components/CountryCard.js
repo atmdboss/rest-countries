@@ -1,10 +1,10 @@
-export default props => {
+export default (props) => {
 	const {
 		flag,
 		name,
 		population,
 		region: { region },
-		capital
+		capital,
 	} = props;
 
 	return (
@@ -14,6 +14,7 @@ export default props => {
 			</div>
 			<div className='card-content container'>
 				<h3 className='head'>{name}</h3>
+				<br />
 				<p>
 					<span className='text-bold'>Population</span>:{population}
 				</p>

@@ -3,13 +3,12 @@ import Router from "next/router";
 
 export default () => {
 	const [value, setValue] = useState("");
-	// const router = useRouter();
+
 	const handleChange = ({ target }) => {
 		setValue(target.value);
 	};
-	const handleSubmit = evt => {
+	const handleSubmit = (evt) => {
 		evt.preventDefault();
-		console.log("in submit");
 		Router.push("/search/[search]", `/search/${value}`);
 	};
 	return (

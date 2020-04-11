@@ -1,13 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap");
 :root {
-	--font-color-dark: hsl(0, 0%, 100%);
-	--font-color-light: hsl(200, 15%, 8%);
-	--bg-color-dark: hsl(207, 26%, 17%);
-	--bg-color-light: hsl(0, 0%, 98%);
-	--dark-mode-elements: hsl(209, 23%, 22%);
-	--light-mode-input: hsl(0, 0%, 52%);
+	--font-color: hsl(0, 0%, 100%);
+	--bg-color: hsl(207, 26%, 17%);
+	--mode-elements: hsl(209, 23%, 22%);
 	--deatil: 16px;
 	--homepage: 14px;
+}
+[data-theme="light"] {
+	--font-color: hsl(200, 15%, 8%);
+	--bg-color: hsl(0, 0%, 98%);
+	--mode-elements: hsl(0, 17%, 98%);
 }
 * {
 	padding: 0;
@@ -15,8 +17,8 @@
 }
 body {
 	font-family: "Nunito Sans", sans-serif;
-	background-color: var(--bg-color-dark);
-	color: var(--font-color-dark);
+	background-color: var(--bg-color);
+	color: var(--font-color);
 	min-height: 100vh;
 }
 .container {
@@ -34,6 +36,9 @@ body {
 .flex.align-center {
 	align-items: center;
 }
+.nav {
+	background-color: var(--mode-elements);
+}
 .welcome {
 	display: flex;
 	flex-direction: column;
@@ -42,13 +47,10 @@ body {
 }
 a {
 	text-decoration: none;
-	color: var(--font-color-dark);
+	color: var(--font-color);
 }
 
 /* Pagination --start */
-.pagination-container {
-	margin: 0 auto;
-}
 .pagination {
 	display: flex;
 	justify-content: center;
@@ -56,28 +58,101 @@ a {
 	list-style-type: none;
 }
 .pagination .page-item {
-	padding: 1em;
-	margin: 1em;
+	padding: 0.5em;
+	margin: 0.5em;
 }
 .pagination .page-link {
 	text-decoration: none;
 }
+@media (min-width: 768px) {
+	.pagination .page-link {
+		padding: 1em;
+		margin: 1em;
+	}
+}
 /* Pagination --end */
+
+/* Search and filter --start */
+.search {
+	position: relative;
+}
+select#regions {
+	background: var(--bg-color);
+	width: 45%;
+	margin-top: 1em;
+	padding: 10px;
+	outline: none;
+	color: var(--font-color);
+	height: 3rem;
+	border-radius: 0.4rem;
+	border: 2px solid var(--bg-color);
+}
+input[type="text"] {
+	padding: 5px 5px 5px 40px;
+	width: 85%;
+	background: var(--bg-color);
+	outline: none;
+	color: var(--font-color);
+	height: 2rem;
+	border-radius: 0.4rem;
+	border: 2px solid var(--bg-color);
+}
+input[type="submit"] {
+	position: absolute;
+	top: 29px;
+	left: 30px;
+	background-color: transparent;
+	border: none;
+	font-size: 1.6em;
+}
+@media (min-width: 768px) {
+	select#regions {
+		width: 25%;
+	}
+}
+@media (min-width: 1024px) {
+	.search {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	select#regions {
+		margin-top: 0;
+		width: 20%;
+	}
+	input[type="text"] {
+		width: 200%;
+	}
+}
+/* Search and filter --end */
 
 /* Card styles --start*/
 .card {
-	height: 400px;
+	height: 350px;
 	width: 300px;
 	border-radius: 10px;
+	background-color: var(--mode-elements);
+	margin: 1em auto;
 }
 .card-image {
-	height: 40%;
+	height: 45%;
 }
 .card-image img {
 	width: 100%;
 	height: 100%;
+	border-radius: 10px 10px 0px 0px;
 }
-/* .card-content {} */
+@media (min-width: 768px) {
+	.grid {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		align-items: center;
+	}
+	.card {
+		margin: 1em auto 3em auto;
+	}
+}
 /* Card styles --end*/
 
 /* Single Country styles --start*/
@@ -99,6 +174,20 @@ a {
 	padding: 5px 30px;
 	box-shadow: 1px 1px 5px hsl(0, 1%, 39%);
 	border-radius: 5px;
+}
+@media (min-width: 768px) {
+	.country-content {
+		display: flex;
+	}
+	.flag {
+		width: 50%;
+		margin: 2em 4em 2em 0;
+	}
+}
+@media (min-width: 1024px) {
+	.flag img {
+		height: 100%;
+	}
 }
 /* Single Country styles --end*/
 
